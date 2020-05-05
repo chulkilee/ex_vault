@@ -8,6 +8,35 @@ defmodule ExVault.Secret.Transit do
   import ExVault.Utils
 
   @doc """
+  Reads a key.
+
+  See [Read Key](https://www.vaultproject.io/api-docs/secret/transit#read-key) for details.
+  """
+  def read_key(client, path, name, opts \\ []) do
+    case Tesla.get(client, "v1/" <> uri_encode(path) <> "/keys/" <> uri_encode(name), opts) do
+      {:ok, %{status: 200, body: %{"data" => %{}}} = resp} -> {:ok, resp}
+      {_, other} -> {:error, other}
+    end
+  end
+
+  @doc """
+  Signs data.
+
+  See [Sign data](https://www.vaultproject.io/api-docs/secret/transit#sign-data) for details.
+  """
+  def sign_data(client, path, name, payload, opts \\ []) do
+    case Tesla.post(
+           client,
+           "v1/" <> uri_encode(path) <> "/sign/" <> uri_encode(name),
+           payload,
+           opts
+         ) do
+      {:ok, %{status: 200, body: %{"data" => %{}}} = resp} -> {:ok, resp}
+      {_, other} -> {:error, other}
+    end
+  end
+
+  @doc """
   Generates a data key.
 
   See [Generate Data Key](https://www.vaultproject.io/api/secret/transit/index.html#generate-data-key) for details.
