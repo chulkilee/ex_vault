@@ -48,7 +48,7 @@ defmodule ExVault.Secret.KV2 do
   def delete_metadata_and_all_versions(client, engine_path, secret_path, opts \\ []) do
     case Tesla.delete(
            client,
-           "v1/" <> uri_encode(engine_path) <> "/data/" <> to_uri_path(secret_path),
+           "v1/" <> uri_encode(engine_path) <> "/metadata/" <> to_uri_path(secret_path),
            opts
          ) do
       {:ok, %{status: 204} = resp} -> {:ok, resp}
