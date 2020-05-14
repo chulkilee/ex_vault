@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## 0.0.2 - 2020-05-14
+
 ### Fixed
 
 - Fix incorrect API call in kv2
@@ -12,4 +14,4 @@
 
 - Add initial implementation
 
-[Unreleased]: https://github.com/chulkilee/ex_vault/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/chulkilee/ex_vault/compare/v0.0.2...HEAD
