@@ -20,6 +20,23 @@ defmodule ExVault.Secret.Transit do
   end
 
   @doc """
+  Rotate a key.
+
+  See [Rotate Key](https://www.vaultproject.io/api-docs/secret/transit#rotate-key) for details.
+  """
+  def rotate_key(client, path, name, opts \\ []) do
+    case Tesla.post(
+           client,
+           "v1/" <> uri_encode(path) <> "/keys/" <> uri_encode(name) <> "/rotate",
+           "",
+           opts
+         ) do
+      {:ok, %{status: 200, body: %{"data" => %{}}} = resp} -> {:ok, resp}
+      {_, other} -> {:error, other}
+    end
+  end
+
+  @doc """
   Signs data.
 
   See [Sign data](https://www.vaultproject.io/api-docs/secret/transit#sign-data) for details.
