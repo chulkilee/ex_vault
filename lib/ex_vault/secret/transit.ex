@@ -2,7 +2,7 @@ defmodule ExVault.Secret.Transit do
   @moduledoc """
   Transit Secrets Engine.
 
-  - [Transit Secrets Engine (API)](https://www.vaultproject.io/api/secret/transit/index.html)
+  - [Transit Secrets Engine (API)](https://www.vaultproject.io/api-docs/secret/transit)
   """
 
   import ExVault.Utils
@@ -39,7 +39,7 @@ defmodule ExVault.Secret.Transit do
   @doc """
   Generates a data key.
 
-  See [Generate Data Key](https://www.vaultproject.io/api/secret/transit/index.html#generate-data-key) for details.
+  See [Generate Data Key](https://www.vaultproject.io/api-docs/secret/transit#generate-data-key) for details.
   """
   def generate_data_key(client, path, type, name, body, opts \\ []) do
     case Tesla.post(
@@ -57,7 +57,7 @@ defmodule ExVault.Secret.Transit do
   @doc """
   Encrypts data.
 
-  See [Encrypt Data](https://www.vaultproject.io/api/secret/transit/index.html#encrypt-data) for details.
+  See [Encrypt Data](https://www.vaultproject.io/api-docs/secret/transit#encrypt-data) for details.
   """
   def encrypt_data(client, path, name, body, opts \\ []) do
     case Tesla.post(
@@ -74,7 +74,7 @@ defmodule ExVault.Secret.Transit do
   @doc """
   Decrypts data.
 
-  See [Decrypt Data](https://www.vaultproject.io/api/secret/transit/index.html#decrypt-data) for details.
+  See [Decrypt Data](https://www.vaultproject.io/api-docs/secret/transit#decrypt-data) for details.
   """
   def decrypt_data(client, path, name, body, opts \\ []) do
     case Tesla.post(

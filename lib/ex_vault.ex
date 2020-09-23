@@ -2,7 +2,7 @@ defmodule ExVault do
   @moduledoc """
   HashiCorp Vault API.
 
-  - [HTTP API](https://www.vaultproject.io/api/overview)
+  - [HTTP API](https://www.vaultproject.io/api-docs)
   """
 
   alias ExVault.Config

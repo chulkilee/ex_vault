@@ -2,7 +2,7 @@ defmodule ExVault.Secret.KV2 do
   @moduledoc """
   KV Secrets Engine - Version 2.
 
-  - [KV Secrets Engine - Version 2 (API)](https://www.vaultproject.io/api/secret/kv/kv-v2.html)
+  - [KV Secrets Engine - Version 2 (API)](https://www.vaultproject.io/api-docs/secret/kv/kv-v2)
   """
 
   import ExVault.Utils
@@ -10,7 +10,7 @@ defmodule ExVault.Secret.KV2 do
   @doc """
   Retrieves the secret at the specified location.
 
-  See [Read Secret Version](https://www.vaultproject.io/api/secret/kv/kv-v2.html#read-secret-version) for details.
+  See [Read Secret Version](https://www.vaultproject.io/api-docs/secret/kv/kv-v2#read-secret-version) for details.
   """
   def read_secret_version(client, engine_path, secret_path, opts \\ []) do
     case Tesla.get(
@@ -26,7 +26,7 @@ defmodule ExVault.Secret.KV2 do
   @doc """
   Creates or updates a secret.
 
-  See [Create/Update Secret](https://www.vaultproject.io/api/secret/kv/kv-v2.html#createupdate-secret) for details.
+  See [Create/Update Secret](https://www.vaultproject.io/api-docs/secret/kv/kv-v2#create-update-secret) for details.
   """
   def upsert_secret(client, engine_path, secret_path, body, opts \\ []) do
     case Tesla.post(
@@ -43,7 +43,7 @@ defmodule ExVault.Secret.KV2 do
   @doc """
   Deletes metadata and all versions.
 
-  See [Delete Metadata and All Versions](https://www.vaultproject.io/api/secret/kv/kv-v2.html#delete-metadata-and-all-versions) for details.
+  See [Delete Metadata and All Versions](https://www.vaultproject.io/api-docs/secret/kv/kv-v2#delete-metadata-and-all-versions) for details.
   """
   def delete_metadata_and_all_versions(client, engine_path, secret_path, opts \\ []) do
     case Tesla.delete(
