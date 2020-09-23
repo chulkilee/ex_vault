@@ -28,7 +28,7 @@ defmodule ExVault.MixProject do
     [
       {:jason, "~> 1.2"},
       {:tesla, "~> 1.3"},
-      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false}
     ]
   end
