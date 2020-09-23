@@ -38,7 +38,7 @@ defmodule ExVault.MixProject do
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/chulkilee/ex_vault",
-        "Changelog" => "https://github.com/chulkilee/ex_vault/blob/master/CHANGELOG.md"
+        "Changelog" => "https://github.com/chulkilee/ex_vault/blob/main/CHANGELOG.md"
       },
       maintainers: ["Chulki Lee"]
     ]
