@@ -87,4 +87,21 @@ defmodule ExVault.Secret.Transit do
       {_, other} -> {:error, other}
     end
   end
+
+  @doc """
+  Rewrap data.
+
+  See [Rewrap Data](https://www.vaultproject.io/api-docs/secret/transit#rewrap-data) for details.
+  """
+  def rewrap_data(client, path, name, body, opts \\ []) do
+    case Tesla.post(
+           client,
+           "v1/" <> uri_encode(path) <> "/rewrap/" <> uri_encode(name),
+           body,
+           opts
+         ) do
+      {:ok, %{status: 200, body: %{"data" => %{}}} = resp} -> {:ok, resp}
+      {_, other} -> {:error, other}
+    end
+  end
 end
