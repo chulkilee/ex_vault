@@ -41,6 +41,8 @@ defmodule ExVault.Secret.Transit do
 
   See [Sign data](https://www.vaultproject.io/api-docs/secret/transit#sign-data) for details.
   """
+  @spec sign_data(ExVault.client(), ExVault.engine_path(), map, ExVault.request_opts()) ::
+          {:ok | :error, ExVault.response()}
   def sign_data(client, path, name, payload, opts \\ []) do
     case Tesla.post(
            client,
@@ -58,6 +60,14 @@ defmodule ExVault.Secret.Transit do
 
   See [Generate Data Key](https://www.vaultproject.io/api-docs/secret/transit#generate-data-key) for details.
   """
+  @spec generate_data_key(
+          ExVault.client(),
+          ExVault.engine_path(),
+          type :: binary(),
+          name :: binary(),
+          map,
+          ExVault.request_opts()
+        ) :: {:ok | :error, ExVault.response()}
   def generate_data_key(client, path, type, name, body, opts \\ []) do
     case Tesla.post(
            client,
@@ -76,6 +86,14 @@ defmodule ExVault.Secret.Transit do
 
   See [Encrypt Data](https://www.vaultproject.io/api-docs/secret/transit#encrypt-data) for details.
   """
+  @spec generate_data_key(
+    ExVault.client(),
+    ExVault.engine_path(),
+    name :: binary(),
+    map,
+    ExVault.request_opts()
+  ) :: {:ok | :error, ExVault.response()}
+
   def encrypt_data(client, path, name, body, opts \\ []) do
     case Tesla.post(
            client,

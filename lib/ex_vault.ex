@@ -7,6 +7,16 @@ defmodule ExVault do
 
   alias ExVault.Config
 
+  @type client :: Tesla.Client.t()
+  @type client_adapter :: Tesla.Client.adapter()
+  @type request_opts :: Tesla.option()
+  @type response :: Tesla.Env.t()
+
+  @type token :: binary()
+
+  @type engine_path :: binary()
+
+  @spec build_client(ExVault.Config.t(), token | nil, client_adapter) :: client
   def build_client(%Config{addr: addr}, token \\ nil, adapter \\ nil) do
     Tesla.client(
       [

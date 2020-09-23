@@ -1,6 +1,6 @@
 defmodule ExVault.Config do
   @moduledoc """
-  Configuration for `Vault`.
+  Configuration for `ExVault`.
   """
 
   @type t :: %__MODULE__{
