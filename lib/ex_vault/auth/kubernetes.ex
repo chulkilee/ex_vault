@@ -5,15 +5,16 @@ defmodule ExVault.Auth.Kubernetes do
   - [Kubernetes Auth Method (API)](https://www.vaultproject.io/api-docs/auth/kubernetes)
   """
 
+  import ExVault.Utils
+
   @doc """
   Fetch a token.
 
   See [Kubernetes Auth Method (API) - Login](https://www.vaultproject.io/api-docs/auth/kubernetes#login) for details.
   """
   def login(client, %{role: _, jwt: _} = body, opts \\ []) do
-    case Tesla.post(client, "v1/auth/kubernetes/login", body, opts) do
-      {:ok, %{status: 200, body: %{"auth" => %{}}} = resp} -> {:ok, resp}
-      {_, other} -> {:error, other}
-    end
+    client
+    |> Tesla.post("v1/auth/kubernetes/login", body, opts)
+    |> handle_response()
   end
 end
