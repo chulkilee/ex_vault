@@ -1,6 +1,10 @@
 # ExVault
 
 [![CI](https://github.com/chulkilee/ex_vault/actions/workflows/ci.yaml/badge.svg)](https://github.com/chulkilee/ex_vault/actions/workflows/ci.yaml)
+[![Hex.pm](https://img.shields.io/hexpm/v/ex_vault.svg)](https://hex.pm/packages/ex_vault)
+[![Hexdocs.pm](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/ex_vault/)
+[![Hex.pm](https://img.shields.io/hexpm/dt/ex_vault.svg)](https://hex.pm/packages/ex_vault)
+[![Hex.pm](https://img.shields.io/hexpm/dw/ex_vault.svg)](https://hex.pm/packages/ex_vault)
 
 Simple wrapper for HashiCorp Vault.
 
