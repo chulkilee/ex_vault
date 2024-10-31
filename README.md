@@ -1,5 +1,7 @@
 # ExVault
 
+[![CI](https://github.com/chulkilee/ex_vault/actions/workflows/ci.yaml/badge.svg)](https://github.com/chulkilee/ex_vault/actions/workflows/ci.yaml)
+
 Simple wrapper for HashiCorp Vault.
 
 ## Installation
